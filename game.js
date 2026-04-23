@@ -7,9 +7,13 @@ const result = document.querySelector('.result')
 
 result.textContent = 'You are first player . Click the button to start'
 
+const getRandomNumber = (num) => {
+    return Math.round(Math.random() * num);
+}
+
 button.addEventListener("click", () => {
-    const first_random_number = Math.round(Math.random() * 2);
-    const second_random_number = Math.round(Math.random() * 2);
+    const first_random_number = getRandomNumber(2)
+    const second_random_number = getRandomNumber(2)
 
     if (first_random_number == 0) {
         first_player_img.setAttribute('src', './img/paper.png')
