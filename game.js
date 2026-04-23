@@ -5,6 +5,8 @@ const first_player_img = document.querySelector('.first_player')
 const second_player_img = document.querySelector('.second_player')
 const result = document.querySelector('.result')
 
+result.textContent = 'You are first player . Click the button to start'
+
 button.addEventListener("click", () => {
     const first_random_number = Math.round(Math.random() * 2);
     const second_random_number = Math.round(Math.random() * 2);
@@ -27,16 +29,22 @@ button.addEventListener("click", () => {
 
 
     if (first_random_number == 0 && second_random_number == 1) {
-        result.textContent = 'Siz yutdingiz!'
+        result.textContent = 'You win!'
+        result.style.color = 'green'
     } else if (first_random_number == 1 && second_random_number == 2) {
-        result.textContent = 'Siz yutdingiz!'
+        result.textContent = 'You win!'
+        result.style.color = 'green'
     } else if (first_random_number == 2 && second_random_number == 0) {
-        result.textContent = 'Siz yutdingiz!'
+        result.textContent = 'You win!'
+        result.style.color = 'green'
     }
     else if (first_random_number == second_random_number) {
-        result.textContent = 'Durrang'
+        result.style.color = 'blue'
+        result.textContent = 'Draw'
     }
     else {
-        result.textContent = 'Siz yutqazdingiz!'
+        result.textContent = 'You lose!'
+        result.style.color = 'red'
+
     }
 });
